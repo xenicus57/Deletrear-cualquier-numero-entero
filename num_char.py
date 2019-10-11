@@ -15,7 +15,7 @@ IDEAS PARA SU CONSTRUCCIÓN
 Dentro del leguaje (español de España) cuando expresamos numeros, lo primero que he intentado es agrupar las expresiones comunes y encontrar excepciones lo que revierte complejidad a las funciones.
 
 Algunas excepciones:
-- El cero, como unico valor (no lo he querido tratar, saldrá un blanco, es facil tratarlo si se desea)
+- El cero, como caracter numerico unico no lo he querido tratar, saldrá un blanco.Es facil tratarlo si se desea
 - El uno, puede expresarse como (un / uno) ej.: un millon..., trescientos treinta y uno
 - Hay otras mas ...
 
@@ -291,7 +291,12 @@ def dnumachar(pipo):
     if not int_pipo.isdigit(): 
         print("no valen ni letras, ni caracteres especiales")
         return None
-
+    # quitar ceros por la izquierda
+    for i in int_pipo:
+        if i == "0":
+            int_pipo = int_pipo[1:]
+        else:
+            break
 
     # SOLO trabajaremos con la parte entera.
     # crearemos una lista en grupos de 3  ejemplo: 1234568 -> ["1","234","568"]
