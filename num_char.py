@@ -24,7 +24,7 @@ Vereis que todas tienen un diccionario local para devolver expresiones.
 
 1º d0a9(...) representa los valores de 0 a 9 (ojo: el cero no como unico valor, 1001)
 
-2º d10a20(...) representa los valores de 10 a 20 . Porqué el 20 y no hasta el 19, otra excepción: Hay una diferencia en el lenguaje con las decenas que en el caso del 20 es veinte y  2? venti..., que no pasa con el resto de decenas, 30:treinta, 32: treinta y dos. Observad también que se contruyen de manera diferente hay una y por medio.
+2º d10a20(...) representa los valores de 10 a 20 . Porqué el 20 y no hasta el 19, otra excepción: Hay una diferencia en el lenguaje con las decenas que en el caso del 20 es veinte y  2? venti..., que no pasa con el resto de decenas, 30:treinta, 32: treinta y dos. Observad también que se contruyen de manera diferente hay una "y" por medio.
 22 -> ventidos
 42 -> cuarenta y dos
 
@@ -129,7 +129,7 @@ def d21a99(pipo):
     Argumentos:
     - pipo : un caracter numerico
 
-    La función devuelve primera expresión que representa dicho caracter numerico.
+    La función devuelve la expresión que representa dicho caracter numerico.
 
     """
 
@@ -156,8 +156,8 @@ def d100a999(pipo):
     Argumentos:
     - pipo : un caracter numerico
 
-    La función devuelve primera expresión que representa dicho caracter numerico.
-    Nota: la cadena mumerica "100", presenta una excepción
+    La función devuelve la primera expresión que representa dicho caracter numerico.
+    Nota: la cadena mumerica "100", presenta la excepción (cien/ciento)
 
     """
 
@@ -319,7 +319,7 @@ def dnumachar(pipo):
     clet = ""  # variable que contendrá la expresion de la cadena numerica.
     npos = 0   # variable que determina posicion en la lista
 
-    # ANALISIS DE LA LISTA
+    # ANALISIS DE LA LISTA (se analizan los bloques en nuestro ejemplo: "12" ,"234" ... )
     for i in l_int_pipo:
         
         clettmp = ""
@@ -364,7 +364,7 @@ def dnumachar(pipo):
                 clettmp += d0a9(i[-1], lkey)  
                 
                 
-        # tenemos 2 numeros en la cadena        
+        # tenemos 2 caracteres numericos en la cadena        
         elif  len(i) == 2: 
             
             # De manera similar a cuando teniamos 3 caracteres numericos lo analizamos con 2
@@ -403,7 +403,7 @@ def dnumachar(pipo):
         else:
             csal += i 
 
-
+    # lo que veras en pantalla
     print(csal)
     return clet.capitalize()
 
